@@ -2,7 +2,7 @@
 
     <?php
     session_start();
-    include 'db.php';
+    include 'includes/db.php';
     $username = $_POST["username"];
     $password = $_POST["password"];
 
@@ -18,7 +18,7 @@
         $_SESSION["is_logged"] = true;
         $_SESSION["username"] = $login['username'];
         $_SESSION["user_id"] = $login['id'];
-        header('Location: index.php');
+        header('Location: /');
     }
     else{
         echo "Pogrešno korisničko ime ili lozionka, probajte ponovo.";
