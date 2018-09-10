@@ -44,8 +44,8 @@
                             Izveštaji
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/change-password">Kartica robe</a>
-                            <a class="dropdown-item" href="">Kartica komitenta</a>
+                            <a class="dropdown-item" href="/article-card-select">Kartica robe</a>
+                            <a class="dropdown-item" href="/client-card-select">Kartica komitenta</a>
                             <a class="dropdown-item" href="/lager-list">Lager lista</a>
                             <a class="dropdown-item" href="/kif">KIF</a>
 

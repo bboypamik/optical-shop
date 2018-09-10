@@ -1,5 +1,5 @@
 <table class="table table-striped datatable mt-5">
-    <a class="form-control  btn-primary  col-2 text-center mt-5" href="/new-article">Dodaj Stavku</a>
+    <a class="form-control  btn-primary  col-2 text-center mt-5" href="/new-article">Dodaj artikl</a>
     <thead>
     <h5 class="mt-5">Roba na lageru</h5>
 

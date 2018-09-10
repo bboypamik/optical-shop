@@ -19,6 +19,7 @@ $client = getClient($params[1]);
     <div class="col-4 mt-5">
         <a class="form-control  btn-primary  text-center mb-5" href="/add-article/<?php echo $client['id'] ?>">Dodaj Stavku</a>
         <form method="post" action="/save-procurement">
+            <input type="hidden" name="client" value="<?php echo $params[1] ?>" />
             <div id="articles">
                 <div>
                     <div class="wrapper">
@@ -28,7 +29,6 @@ $client = getClient($params[1]);
                             <?php endforeach; ?>
                         </select>
                         <input type="text" size="10" name="quantity[]" value="" placeholder="količina" />
-                        <input type="hidden" name="client" value="<?php echo $params[1] ?>" />
                     </div>
                 </div>
             </div>

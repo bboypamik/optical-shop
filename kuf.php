@@ -37,7 +37,7 @@ $procurements = getProcurementsBox();
 
             <td><?php echo $procurement["sum"] ?></td>
 
-            <td><a href="/order/<?php echo $procurement['id'] ?>"><i class="fas fa-eye ml-4"></i></a></td>
+            <td><a href="/procurement/<?php echo $procurement['id'] ?>"><i class="fas fa-eye ml-4"></i></a></td>
 
 
         </tr>

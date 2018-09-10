@@ -33,7 +33,7 @@ $client = getClient($procurement['client_id']);
     </div>
 </div>
 
-<h3>Otpremnica-račun br. <?php echo $procurement['id'] ?></h3>
+<h3>Račun nabavke br. <?php echo $procurement['id'] ?></h3>
 <h6>Datum prometa dobara: <?php echo date("m.d.Y"); ?></h6>
 <?php if (!$procurement['finished']): ?>
 <form action="/finish_procurement" method="post">

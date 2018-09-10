@@ -35,7 +35,7 @@ $client = getClient($params[1]);
                     <?php endforeach; ?>
                 </select>
 
-                <input type="number" class="quantity" oninput="checkMax(this)" size="10" name="quantity[]" value="" max="0" placeholder="količina" />
+                <input type="text" class="quantity" oninput="checkMax(this)" size="10" name="quantity[]" value="" max="0" placeholder="količina" />
 
                 <input type="hidden" name="client" value="<?php echo $params[1] ?>" />
             </div>

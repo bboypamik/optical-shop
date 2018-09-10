@@ -12,12 +12,10 @@ function myFunction(id) {
 
 $(function() {
     $('#addArticle').click(function() {
-        var $clone = $('#articles div .wrapper');
-        $clone.clone().appendTo($('#articles'));
-    });
-
-    $( "#articles div .wrapper select").change(function() {
-        $(this).siblings("input.quantity").attr({"max":quantity[$(this).val()]});
+        var $clone = $('#articles div .wrapper').clone();
+        $clone.find('input').val('');
+        $clone.find('input').attr({"max":''});
+        $clone.appendTo($('#articles'));
     });
 
     $('#print').click(function() {
@@ -32,8 +30,6 @@ function checkMax(elem){
     }
 }
 
-var $divClone = $("div#source").clone();
-//The next line changes the ID and innerHTML
-$divClone.attr("id", "newID")
-$divClone.html("<span style='color: Red;'>New div's new innerHTML, with new ID=newID</span>");
-$("div#destination").append($divClone);
+$(document).on('change', '.wrapper select', function() {
+    $(this).siblings("input.quantity").attr({"max":quantity[$(this).val()]});
+});

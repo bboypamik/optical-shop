@@ -555,7 +555,7 @@ function saveProcurement($articles, $quantity, $client)
     }
     // Kreiramo inicijalni order
     $sql = "INSERT INTO procurements (procurement_date, client_id ) VALUES (now(), $client)";
-    "<br>";
+
     if ($conn->query($sql)) {
         $procurement_id = $conn->lastInsertId();
     } else {
@@ -671,3 +671,44 @@ function getProcurementItems($procurement_id)
 
     return $order_items;
 }
+
+function getClientCardBox(){
+    global $conn, $params;
+    $sql = "SELECT * FROM orders WHERE client_id = '$params[1]' ORDER BY id DESC ";
+
+    $statement = $conn->prepare($sql);
+
+    $statement->execute();
+
+    $statement->setFetchMode(PDO::FETCH_ASSOC);
+
+    $clientCardBox = $statement->fetchAll();
+
+    return $clientCardBox;
+}
+
+function getArticleCardBox()
+{
+    global $conn, $params;
+
+    $sql = "SELECT orders.id, orders.order_date, orders.sum, orders.client_id, order_items.article_id 
+    FROM
+     order_items
+     JOIN
+     orders ON orders.id = order_items.order_id
+    
+   WHERE
+   order_items.article_id = '$params[1]'";
+
+    $statement = $conn->prepare($sql);
+
+    $statement->execute();
+
+    $statement->setFetchMode(PDO::FETCH_ASSOC);
+
+    $articleCardBox = $statement->fetchAll();
+
+    return $articleCardBox;
+
+}
+

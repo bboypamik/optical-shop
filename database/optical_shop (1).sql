@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2018 at 08:01 PM
+-- Generation Time: Sep 10, 2018 at 09:48 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -49,8 +49,8 @@ INSERT INTO `articles` (`id`, `name`, `unit_of_measure`, `quantity`, `min_quanti
 (3, 'Ram za staklo', 'kom', 498, 5, 4750, 8, 380),
 (4, 'Rey Ban', 'kom', 354, 10, 2000, 20, 400),
 (5, 'naoÄare', 'kom', 1299, 10, 7400, 18, 1332),
-(6, 'futrola', 'kom', 1300, 10, 990, 8, 79.2),
-(7, 'Lupa', 'kom', 299, 10, 4820, 8, 0);
+(6, 'futrola', 'kom', 1400, 10, 990, 8, 79.2),
+(7, 'Lupa', 'kom', 401, 10, 4820, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -280,11 +280,12 @@ CREATE TABLE `procurements` (
 INSERT INTO `procurements` (`id`, `procurement_date`, `client_id`, `unit_of_measure`, `quantity`, `PDV_stopa`, `sum`, `finished`) VALUES
 (1, '2018-09-10', 1, 'kom', 250, 8, 2250, 0),
 (2, '2018-09-10', 2, 'kom', 45, 18, 1400, 0),
-(3, '2018-09-10', 1, '', 0, 0, 581465, 0),
+(3, '2018-09-10', 1, '', 0, 0, 581465, 1),
 (4, '2018-09-10', 6, '', 0, 0, 521857, 0),
 (5, '2018-09-10', 1, '', 0, 0, 8391411, 1),
 (6, '2018-09-10', 1, '', 0, 0, 482386, 0),
-(7, '2018-09-10', 3, '', 0, 0, 1523197, 1);
+(7, '2018-09-10', 3, '', 0, 0, 1523197, 1),
+(8, '2018-09-10', 5, '', 0, 0, 10026, 1);
 
 -- --------------------------------------------------------
 
@@ -316,7 +317,8 @@ INSERT INTO `procurement_items` (`id`, `procurement_id`, `article_id`, `quantity
 (9, 7, 7, 100, 482386),
 (10, 7, 6, 100, 99079),
 (11, 7, 5, 100, 741332),
-(12, 7, 4, 100, 200400);
+(12, 7, 4, 100, 200400),
+(13, 8, 7, 2, 10026);
 
 -- --------------------------------------------------------
 
@@ -440,13 +442,13 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `procurements`
 --
 ALTER TABLE `procurements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `procurement_items`
 --
 ALTER TABLE `procurement_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
